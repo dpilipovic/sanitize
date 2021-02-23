@@ -1,7 +1,7 @@
 #!/bin/python3
 
 """
-DFG Data Sanitize Python script
+Data Sanitize Python script
 Author: Dusan Pilipovic Dusan.Pilipovic@dynatrace.com
 v1.0 10-19-2020
 v2.0 10-23-2020 - Changed script so that each FQDN that was found is replaced with unique host- parameter
