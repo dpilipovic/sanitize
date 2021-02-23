@@ -6,6 +6,15 @@
 
   This script uses python with Regular Expressions to purge any sensitive data from the log files.
 
+Requires: python3
+
+Create the following data structure with clean and dirty subdirectories:
+
+data
+└── sanitize
+    ├── clean
+    ├── dirty
+    └── Sanitize.py
 
 To use the script, place any files, whether a zip archive or collection of files within directory structure of your choice under directory:
 
