@@ -6,7 +6,6 @@
 
   This script uses python with Regular Expressions to purge any sensitive data from the log files.
 
-Requires: python3
 
 Create the following data structure with clean and dirty subdirectories:
 
