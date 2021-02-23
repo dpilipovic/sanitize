@@ -7,12 +7,13 @@
   This script uses python with Regular Expressions to purge any sensitive data from the log files.
 
 
-Create the following data structure with clean and dirty subdirectories:
+Create the following data structure with clean, dirty and matches subdirectories:
 
 data
 └── sanitize
     ├── clean
     ├── dirty
+    ├── matches
     └── Sanitize.py
 
 To use the script, place any files, whether a zip archive or collection of files within directory structure of your choice under directory:
@@ -29,11 +30,11 @@ You can also validate list of IP and Hostnames matches under /data/sanitize/matc
 
 Script will do the following:
 
-  It will look for any zip archive's and unpack them in place (/data/dirty)
+  It will look for any zip archive's and unpack them in place (/data/sanitize/dirty)
 
   Create a new directory under /data/clean with a date-and-timestamp of now.
 
-  Create the full directory structure of dirty under  /data/clean/timestamp without any files
+  Create the full directory structure of dirty under  /data/sanitize/clean/timestamp without any files
 
   Then using re.findall script will search for any matches of IP and Hostname regexes. All unique matches (if they don't already exist) are added to dictionaries of matches with a replacement string (host-1 or ipaddr-2).
 
