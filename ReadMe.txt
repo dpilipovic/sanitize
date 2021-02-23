@@ -9,7 +9,7 @@
 
 To use the script, place any files, whether a zip archive or collection of files within directory structure of your choice under directory:
 
-   /data/dirty/
+   /data/sanitize/dirty/
 
 Then run a script as such:
 
