@@ -1,6 +1,8 @@
 
       DFG Team Data Sanitation script
 
+Author: Dusan Pilipovic
+dusan.pilipovic@dynatrace.com
 
   This script uses python with Regular Expressions to purge any sensitive data from the log files.
 
