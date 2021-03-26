@@ -30,7 +30,7 @@ Script will do the following:
 
   It will look for any zip archive's and unpack them in place (/data/sanitize/dirty)
 
-  Create a new directory under /data/clean with a date-and-timestamp of now.
+  Create a new directory under /data/sanitize/clean with a date-and-timestamp of now.
 
   Create the full directory structure of dirty under  /data/sanitize/clean/timestamp without any files
 
