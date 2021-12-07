@@ -6,6 +6,7 @@ Author: Dusan Pilipovic Dusan.Pilipovic@dynatrace.com
 v1.0 10-19-2020
 v2.0 10-23-2020 - Changed script so that each FQDN that was found is replaced with unique host- parameter
 v3.0 10-26-2020 - Modified script to update REGEXES with FQDN amd IP matches so we only replace once
+v4.0 12-06-2021 - Added , errors='ignore' to lines 72 and 136 - so that script doesn't fail if it comes across non-UTF8 encoded characters
 """
 
 import os, os.path, shutil, re, fnmatch
@@ -68,7 +69,7 @@ def find_matches(src, ip_regex, hn_regex, base, REGEXES):
     srcfiles = [os.path.join(dp, f) for dp, dn, filenames in os.walk(src) for f in filenames]
     print("Searching for IP address and Hostname patterns in files and adding them to dictionary. This might take a while ...")
     for file in srcfiles:
-      with open(file, 'r') as f:
+      with open(file, 'r', errors='ignore') as f:
         for line in f:
 
           # Search for ip_regex matches and add unique match values to ip_repl_d dictionary
@@ -132,7 +133,7 @@ def sanitize_files(src, copydest, REGEXES):
         print('Original file: {}'.format(input_file))
         print('Cleaned file: {}'.format(output_file))
 
-        with open(input_file, "r") as fi, open(output_file, "w") as fo:
+        with open(input_file, "r", errors='ignore') as fi, open(output_file, "w") as fo:
             for line in fi:
                 for search, replace in REGEXES:
                     line = search.sub(replace, line)
